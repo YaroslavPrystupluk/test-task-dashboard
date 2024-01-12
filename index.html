@@ -16,12 +16,36 @@
 		<header class="header">
 			<h1 class="header-title">Hello Evano 👋🏼,</h1>
 		</header>
-		<main>
-			<article>
-				<section></section>
-				<section></section>
+		<main class="main">
+			<article class="wrapper">
+				<section class="dashboard">
+					<div class="dashboard-header">
+						<h2 class="dashboard-header__title">All Customers</h2>
+						<p class="dashboard-header__subtitle">Active Members</p>
+					</div>
+					<div class="dashboard-search">
+						<img class="dashboard-search__icon" src="img/search.png" alt="search">
+						<input class="dashboard-search__input" type="text" name="search" placeholder="Search">
+					</div>
+					<div class="dashboard-main">
+						<table class="dashboard-table" id="table"></table>
+					</div>
+				</section>
+				<section class="pagination"></section>
 			</article>
-		</main>
+			</main>
+			<aside class="aside">
+				<ul>
+					<li>Dashboard</li>
+					<li>Product</li>
+					<li>Customers</li>
+					<li>Income</li>
+					<li>Promote</li>
+					<li>Help</li>
+				</ul>
+			</aside>
+		
 	</div>
 </body>
+<script src="script/script.js"></script>
 </html>
