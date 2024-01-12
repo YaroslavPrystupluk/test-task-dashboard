@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --title: #000;
+  --title-dashboard: #b5b7c0;
+  --subtitle: #16c098;
+  --text-dashboard: #292d32;
+  --pagination-bg: #f5f5f5;
+  --pagination-border: 1px solid #EEE;
+  --pagination-text: #404b52;
+  --btn-active-text: #008767;
+	--btn-active-bg: rgba(22, 192, 152, 0.38);
+	--btn-active-border: 1px solid #00B087;
+	--btn-Inactive-text: #DF0404;
+	--btn-Inactive-bg: #FFC5C5;
+	--btn-Inactive-border: 1px solid #DF0404;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header-title {
+  font-family: Poppins, sans-serif;
+color: var(--title);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  
+}
