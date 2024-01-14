@@ -96,7 +96,7 @@ const paginationActive = (block) => {
             li.forEach((liItem) => {
                 liItem.classList.remove("pagination-active");
             });
-            target.classList.add("pagination-active");
+            item.classList.add("pagination-active");
         });
     });
 };
