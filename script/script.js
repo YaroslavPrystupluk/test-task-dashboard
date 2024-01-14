@@ -83,9 +83,19 @@ for (let i = 0; i < maxLength; i++) {
         }
     });
 }
-
 const paginationActive = () => {
-    const activeLi = document.querySelectorAll(".pagination-count__number");
-    activeLi.forEach((item))
+    const li = document.querySelectorAll(".pagination-count__number");
+    const paginationText = document.querySelector(".pagination-show");
+    li.forEach((item) => {
+        item.addEventListener("click", (event) => {
+            const target = event.target;
+            paginationText.textContent = `Showing data ${target.textContent} to 8 of 256K entries`;
+            li.forEach((liItem) => {
+                liItem.classList.remove("pagination-active");
+            });
+            target.classList.add("pagination-active");
+        });
+    });
 };
+paginationActive();
 //# sourceMappingURL=script.js.map

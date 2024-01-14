@@ -215,6 +215,12 @@ tr td:last-child {
 	color: var(--hover-text);
 }
 
+.pagination-active{
+    background-color: var(--hover-background);
+    border: var(--hover-border);
+    color: var(--hover-text);
+}
+
 .no-number{
 	padding: 6px 0;
 	background-color: transparent;
