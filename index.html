@@ -25,17 +25,36 @@
 					</div>
 					<div class="dashboard-search">
 						<img class="dashboard-search__icon" src="img/search.png" alt="search">
-						<input class="dashboard-search__input" type="text" name="search" placeholder="Search">
+						<label>
+							<input class="dashboard-search__input" type="text" name="search" placeholder="Search">
+						</label>
 					</div>
-					<div class="dashboard-main">
-						<table class="dashboard-table" id="table"></table>
+
+				</section>
+				<section class="dashboard dashboard-main">
+					<table class="dashboard-table" id="table"></table>
+				</section>
+				<section class="dashboard pagination">
+					<div class="pagination-show">
+						Showing data 1 to 8 of 256K entries
+					</div>
+					<div class= "pagination-count">
+						<ul class="pagination-count__list">
+							<li class="pagination-count__nav">&lt;</li>
+							<li class="pagination-count__number">1</li>
+							<li class="pagination-count__number">2</li>
+							<li class="pagination-count__number">3</li>
+							<li class="pagination-count__number">4</li>
+							<li class="no-number">...</li>
+							<li class="pagination-count__number">40</li>
+							<li class="pagination-count__nav">&gt;</li>
+						</ul>
 					</div>
 				</section>
-				<section class="pagination"></section>
 			</article>
 			</main>
-			<aside class="aside">
-				<ul>
+			<aside class="sidebar">
+				<ul class="sidebar-list">
 					<li>Dashboard</li>
 					<li>Product</li>
 					<li>Customers</li>

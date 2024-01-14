@@ -83,4 +83,9 @@ for (let i = 0; i < maxLength; i++) {
         }
     });
 }
+
+const paginationActive = () => {
+    const activeLi = document.querySelectorAll(".pagination-count__number");
+    activeLi.forEach((item))
+};
 //# sourceMappingURL=script.js.map
