@@ -43,9 +43,15 @@
 }
 
 .header {
+	display: flex;
+	justify-content: space-between;
   padding: 0 0 51px 0;
   background-color: var(--dashboars-wrapper);
   grid-area: header;
+}
+
+.header-user{
+	display: none;
 }
 
 .header-title {
@@ -128,6 +134,7 @@
   color: var(--title-dashboard);
   text-align: start;
   padding: 0 0 14px 0;
+  white-space: nowrap;
 }
 
 tr th:first-child {
@@ -141,6 +148,7 @@ tr th:last-child {
 .dashboard-table td {
   border-bottom: var(--pagination-border);
   padding: 24px 0;
+  white-space: nowrap;
 }
 
 tr td:first-child {
@@ -244,11 +252,11 @@ tr td:last-child {
   padding: 36px 0 0 28px;
 }
 
-.sidebar-header h2{
-color: var(--title);
-	font-size: 26px;
-	font-weight: 600;
-	letter-spacing: 0.26px;
+.sidebar-header h2 {
+  color: var(--title);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.26px;
 }
 
 .sidebar-header span {
@@ -323,16 +331,80 @@ color: var(--title);
 }
 
 @media (max-width: 1024px) {
-	.container{
-		display: block;
-		margin: 0 auto;
+  .container {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .header {
+    padding: 20px 0 10px 0;
+  }
+
+  .header-title{
+	margin: 0 0 0 71px;
+  }
+
+  .header-user{
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 0 30px 0 0;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .dashboard-main {
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 0 10px;
+  }
+
+  .pagination{
+		display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  tr th:first-child,
+  tr td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: var(--hover-background);
+    z-index: 1;
+  }
+}
+
+@media (max-width: 480px) {
+.dashboard {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 25px;
 	}
 
-	.header{
-		padding: 20px 0 10px 0;
+	.dashboard-search {
+		padding: 0;
 	}
 
-	.sidebar{
-		display: none;
+	.dashboard-search__input {
+		width: 300px;
+	}
+
+	.dashboard-search__icon {
+		top: 8px;
+	}
+	.header {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.header-title {
+		margin: 0;
 	}
 }
