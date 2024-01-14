@@ -101,14 +101,15 @@ for ( let i = 0; i < maxLength; i++ ) {
 		} );
 }
 
-const paginationActive = (): void => {
-		const li = document.querySelectorAll( ".pagination-count__number" ) as NodeList;
+const paginationActive = (block : string): void => {
+		const li = document.querySelectorAll( block ) as NodeList;
 		const paginationText = document.querySelector(".pagination-show") as HTMLElement
 		li.forEach( ( item: Node ): void => {
 				item.addEventListener( "click", ( event: Event ): void => {
 						const target = event.target as HTMLElement;
-						paginationText.textContent = `Showing data ${target.textContent} to 8 of 256K entries`
-
+						if(target.classList.contains("pagination-count__number")){
+								paginationText.textContent = `Showing data ${target.textContent} to 8 of 256K entries`
+						}
 						li.forEach( ( liItem: Node ) => {
 								( liItem as HTMLElement ).classList.remove( "pagination-active" );
 						} );
@@ -119,4 +120,5 @@ const paginationActive = (): void => {
 		} );
 };
 
-paginationActive();
+paginationActive(".pagination-count__number");
+paginationActive(".sidebar-list__item");

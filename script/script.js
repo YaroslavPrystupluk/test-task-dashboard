@@ -83,13 +83,16 @@ for (let i = 0; i < maxLength; i++) {
         }
     });
 }
-const paginationActive = () => {
-    const li = document.querySelectorAll(".pagination-count__number");
+const paginationActive = (block) => {
+        const li = document.querySelectorAll(block);
     const paginationText = document.querySelector(".pagination-show");
     li.forEach((item) => {
         item.addEventListener("click", (event) => {
             const target = event.target;
-            paginationText.textContent = `Showing data ${target.textContent} to 8 of 256K entries`;
+            if (target.classList.contains("pagination-count__number")) {
+                paginationText.textContent = `Showing data ${target.textContent} to 8 of 256K entries`;
+            }
+        
             li.forEach((liItem) => {
                 liItem.classList.remove("pagination-active");
             });
@@ -97,5 +100,7 @@ const paginationActive = () => {
         });
     });
 };
-paginationActive();
+paginationActive(".pagination-count__number");
+
+paginationActive(".sidebar-list__item");
 //# sourceMappingURL=script.js.map
