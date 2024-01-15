@@ -114,11 +114,30 @@ const paginationActive = (block : string): void => {
 								( liItem as HTMLElement ).classList.remove( "pagination-active" );
 						} );
 
-						target.classList.add( "pagination-active" );
+						if ((item as HTMLElement).classList) {
+            (item as HTMLElement).classList.add("pagination-active");
+        }
+		  document.querySelector<HTMLElement>(".nav").classList.remove("open");
+		  document.querySelector<HTMLElement>(".burger").classList.remove("active");
+		  document.querySelector<HTMLElement>("body").style.overflow = "auto";
+	
 				} );
-
 		} );
 };
 
 paginationActive(".pagination-count__number");
 paginationActive(".sidebar-list__item");
+
+
+document
+  .querySelector<HTMLElement>(".burger")
+  .addEventListener("click", function (this: HTMLElement ) {
+    this.classList.toggle("active");
+	 document.querySelector<HTMLElement>("body").style.overflow = "auto";
+    const burgerOpen = document.querySelector<HTMLElement>(".nav");
+    burgerOpen.classList.toggle("open");
+    if (burgerOpen.classList.contains("open")) {
+      document.querySelector<HTMLElement>("body").style.overflow = "hidden";
+    
+    }
+  });

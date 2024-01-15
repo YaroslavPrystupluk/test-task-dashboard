@@ -84,7 +84,7 @@ for (let i = 0; i < maxLength; i++) {
     });
 }
 const paginationActive = (block) => {
-        const li = document.querySelectorAll(block);
+    const li = document.querySelectorAll(block);
     const paginationText = document.querySelector(".pagination-show");
     li.forEach((item) => {
         item.addEventListener("click", (event) => {
@@ -92,15 +92,29 @@ const paginationActive = (block) => {
             if (target.classList.contains("pagination-count__number")) {
                 paginationText.textContent = `Showing data ${target.textContent} to 8 of 256K entries`;
             }
-        
             li.forEach((liItem) => {
                 liItem.classList.remove("pagination-active");
             });
-            item.classList.add("pagination-active");
+            if (item.classList) {
+                item.classList.add("pagination-active");
+            }
+            document.querySelector(".nav").classList.remove("open");
+            document.querySelector(".burger").classList.remove("active");
+            document.querySelector("body").style.overflow = "auto";
         });
     });
 };
 paginationActive(".pagination-count__number");
-
 paginationActive(".sidebar-list__item");
+document
+    .querySelector(".burger")
+    .addEventListener("click", function () {
+    this.classList.toggle("active");
+    document.querySelector("body").style.overflow = "auto";
+    const burgerOpen = document.querySelector(".nav");
+    burgerOpen.classList.toggle("open");
+    if (burgerOpen.classList.contains("open")) {
+        document.querySelector("body").style.overflow = "hidden";
+    }
+});
 //# sourceMappingURL=script.js.map
